@@ -18,7 +18,12 @@ class App extends Component {
     this.setState({ currentAuthor: author })
   }
 
-  resetAuth = () => this.setState({ currentAuthor: null })
+  resetAuth = () => {
+    this.setState({
+      currentAuthor: null,
+      filteredAuth: authors
+   })
+  }
 
   filterAuthors = query => {
     
@@ -50,7 +55,7 @@ class App extends Component {
 
     console.log("this.state", this.state)
     console.log("this.state.currentAuthor", this.state.currentAuthor)
-                      
+
     return (
       <div id="app" className="container-fluid">
         <div className="row">
